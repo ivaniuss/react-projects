@@ -22,7 +22,7 @@ function Accordion() {
       <button className='bg-blue-200 rounded-md p-2 my-2' onClick={() => setEnableMultipleSelection( prevState => !prevState)}>{enableMultipleSelection ? "enable single selection": "enable multiple selection"}</button>
       {data && data.length > 0 ?
         data.map((item) => (
-          <div className='flex flex-col w-1/2 items-center'>
+          <div key={item.id} className='flex flex-col w-1/2 items-center'>
             <div className='flex bg-blue-300 mt-3'>
               <h3 onClick={enableMultipleSelection? () => handleMultipleSelection(item.id) : () => handleSingleSelection(item.id)}>
                 {item.question}
